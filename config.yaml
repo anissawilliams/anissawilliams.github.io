@@ -1,31 +1,18 @@
 # ============================================================
 # ANISSA WILLIAMS - PORTFOLIO CONFIGURATION
 # ============================================================
-# Edit this file to update your portfolio content.
-# After saving, changes appear automatically on your site.
-# ============================================================
 
-# ------------------------------------------------------------
-# PERSONAL INFO
-# ------------------------------------------------------------
 name: "Anissa Williams"
 tagline: "Technical. Tactical. Analytical."
 subtitle: "Engineering data systems for the modern game."
-role: "I build data systems and decision‑support tools for sports, education, and supply chain analytics, with a focus on clarity, modeling, and reproducibility."
+role: "I build data systems and decision-support tools for sports, education, and supply chain analytics, with a focus on clarity, modeling, and reproducibility."
 headshot: "assets/headshot.png"
 
-# ------------------------------------------------------------
-# SOCIAL LINKS
-# ------------------------------------------------------------
 social:
   github: "https://github.com/anissawilliams"
   linkedin: "https://linkedin.com/in/buildingwithanissa"
   email: "anissawilliamschs@gmail.com"
-  # resume: "assets/resume.pdf"  # Uncomment and add resume if desired
 
-# ------------------------------------------------------------
-# SKILLS / TAGS (displayed on homepage)
-# ------------------------------------------------------------
 skills:
   - "Python"
   - "SQL"
@@ -39,37 +26,20 @@ skills:
   - "NLP"
   - "React"
 
-
-# ------------------------------------------------------------
-# PROJECTS
-# ------------------------------------------------------------
-# For each project:
-#   - id: unique identifier (used for URLs and file naming)
-#   - title: display name
-#   - short_description: 1-2 sentences for homepage card
-#   - long_description: fuller description for project page (can use HTML)
-#   - tags: technologies/skills used
-#   - featured: true/false (featured projects appear larger)
-#   - screenshots: list of image filenames in assets/projects/
-#   - links: github, live, colab, etc.
-# ------------------------------------------------------------
-
 projects:
   - id: "cfb-chaos"
     title: "CFB Chaos Project"
     short_description: "Modeling chaos and unpredictability in college football using volatility, ELO gaps, and game-level dynamics."
     long_description: |
-        A data-driven analysis of chaos in college football, quantifying unpredictability through volatility,
-        ELO mismatches, explosive play patterns, and game-level dynamics. Includes interactive visualizations
-        that explore team tendencies, conference trends, and season-wide momentum. This project demonstrates
-        modeling, feature engineering, and decision-support analysis applicable to baseball environments,
-        including leverage modeling, matchup volatility, and in-game strategy evaluation.
+      A data-driven analysis of chaos in college football, quantifying unpredictability through volatility,
+      ELO mismatches, explosive play patterns, and game-level dynamics. Includes interactive visualizations
+      that explore team tendencies, conference trends, and season-wide momentum.
     tags:
-        - "Python"
-        - "Data Visualization"
-        - "Sports Analytics"
-        - "Statistics"
-        - "Feature Engineering"
+      - "Python"
+      - "Data Visualization"
+      - "Sports Analytics"
+      - "Statistics"
+      - "Feature Engineering"
     featured: true
     screenshot_folder: "cfb_chaos"
     links:
@@ -88,16 +58,10 @@ projects:
       - "AI/LLM"
       - "Education"
     featured: false
-    # OPTION 1: List specific screenshots
-    # screenshots:
-    #   - "java-tutor-1.png"
-    #   - "java-tutor-2.png"
-    # OPTION 2: Auto-load all images from a subfolder (just drop files in!)
     screenshot_folder: "java_tutor"
     links:
       github: "https://github.com/anissawilliams/java_ai_tutor_clean"
       live: "https://cofc-java-scaffolded-tutor.streamlit.app"
-      # colab: ""
 
   - id: "java-tutor-analytics"
     title: "Java Tutor Analytics Dashboard"
@@ -122,8 +86,8 @@ projects:
     short_description: "Automated ETL pipeline aggregating and standardizing college football NIL data."
     long_description: |
       A production-style ETL pipeline that collects, cleans, and aggregates NIL deal information for
-        college football players. Supports analysis of NIL trends across conferences, positions, and programs,
-        enabling deeper insight into roster economics and player valuation.
+      college football players. Supports analysis of NIL trends across conferences, positions, and programs,
+      enabling deeper insight into roster economics and player valuation.
     tags:
       - "Python"
       - "ETL"
@@ -141,12 +105,8 @@ projects:
     short_description: "Automated pipeline for ingesting, structuring and monitoring regulatory documents at scale."
     long_description: |
       A document-processing pipeline that ingests regulatory text, extracts key entities and relationships,
-      and structures the data for downstream compliance analysis. The system maintains a record of each
-      document’s last-seen hash and update timestamp, allowing it to automatically detect when a regulation
-      has changed. When updates occur, the parser reprocesses the document, flags substantive differences,
-      and refreshes the structured output. Built with reproducibility, monitoring, and large-scale ingestion
-      in mind.
-
+      and structures the data for downstream compliance analysis. Built with reproducibility, monitoring,
+      and large-scale ingestion in mind.
     tags:
       - "Python"
       - "NLP"
@@ -175,13 +135,9 @@ projects:
       github: "https://github.com/anissawilliams/ordinance-parser"
       live: "https://ordinance-parser.onrender.com/"
 
-
-# ------------------------------------------------------------
-# THEME COLORS (Garnet & Gold)
-# ------------------------------------------------------------
 theme:
-  primary: "#782F40"      # Garnet
-  secondary: "#CEB888"    # Gold
+  primary: "#782F40"
+  secondary: "#CEB888"
   dark: "#1a1a1a"
   light: "#f8f8f8"
   text: "#333333"
