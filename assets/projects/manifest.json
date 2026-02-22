@@ -20,7 +20,11 @@
     "08_TeamEloTrajectories.jpg",
     "09_Overview_AlabamaTeamDeepDive.png",
     "10_ChaosTrend_Leaderboard.png",
-    "11_GameDetails.jpg"
+    "11_GameDetails.jpg",
+    "13_GameArchetypesPieChart.png",
+    "14_ConfChaosTrends_AvgChaosByConf.png",
+    "15_WeeklyConfChaos_AccChaosMomentum.png",
+    "16_ChaosScoresByTeam.png"
   ],
   "cfb_nil_pipeline": [
     "01_talent_vs_wins.png",
