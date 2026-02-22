@@ -30,10 +30,14 @@ skills:
   - "SQL"
   - "Data Pipelines"
   - "Sports Analytics"
+  - "Statistical Modeling"
   - "Data Visualization"
   - "ETL"
+  - "Machine Learning"
+  - "AI/LLM"
   - "NLP"
   - "React"
+
 
 # ------------------------------------------------------------
 # PROJECTS
@@ -50,13 +54,35 @@ skills:
 # ------------------------------------------------------------
 
 projects:
+  - id: "cfb-chaos"
+  - title: "CFB Chaos Project"
+  - short_description: "Modeling chaos and unpredictability in college football using volatility, ELO gaps, and game-level dynamics."
+  - long_description: |
+  - A data-driven analysis of chaos in college football, quantifying unpredictability through volatility,
+  - ELO mismatches, explosive play patterns, and game-level dynamics. Includes interactive visualizations
+  - that explore team tendencies, conference trends, and season-wide momentum. This project demonstrates
+  - modeling, feature engineering, and decision-support analysis applicable to baseball environments,
+  - including leverage modeling, matchup volatility, and in-game strategy evaluation.
+  - tags:
+  - "Python"
+  - "Data Visualization"
+  - "Sports Analytics"
+  - "Statistics"
+  - "Feature Engineering"
+  - featured: true
+  - screenshot_folder: "cfb_chaos"
+  - links:
+  - github: "https://github.com/anissawilliams/cfb_chaos"
+  - live: "https://cfbchaos-510.streamlit.app"
+  - colab: ""
+
   - id: "java-tutor"
     title: "Java Tutor"
-    short_description: "AI-powered tutoring system for teaching Java concepts to students."
+    short_description: "AI-powered tutoring system that teaches Java concepts through adaptive, scaffolded instruction."
     long_description: |
-      An intelligent tutoring system that uses scaffolded learning approaches 
-      to teach Java programming concepts. Compares character-based, non-character, 
-      and direct chat conditions to measure learning effectiveness.
+      An intelligent tutoring system that delivers adaptive, scaffolded instruction for Java programming.
+      Compares character-based, non-character, and direct-chat conditions to evaluate learning effectiveness
+      across multiple student cohorts.
     tags:
       - "Python"
       - "AI/LLM"
@@ -69,17 +95,17 @@ projects:
     # OPTION 2: Auto-load all images from a subfolder (just drop files in!)
     screenshot_folder: "java_tutor"
     links:
-      github: "https://github.com/anissawilliams/java-tutor"
-      # live: ""
+      github: "https://github.com/anissawilliams/java_ai_tutor_clean"
+      live: "https://cofc-java-scaffolded-tutor.streamlit.app"
       # colab: ""
 
   - id: "java-tutor-analytics"
     title: "Java Tutor Analytics Dashboard"
-    short_description: "Interactive dashboard analyzing learning outcomes across tutoring conditions."
+    short_description: "Interactive dashboard analyzing learning outcomes, engagement patterns, and cross-session performance."
     long_description: |
-      React + Flask dashboard visualizing quiz performance, engagement metrics, 
-      and survey results from the Java Tutor study. Includes per-question analysis, 
-      difficulty breakdowns, and cross-session comparisons.
+      A React + Flask analytics dashboard visualizing quiz performance, engagement metrics, and survey data
+      from the Java Tutor study. Includes per-question difficulty analysis, condition-level comparisons,
+      and cross-session improvement tracking.
     tags:
       - "React"
       - "Flask"
@@ -88,32 +114,39 @@ projects:
     featured: true
     screenshot_folder: "java_tutor_analytics"
     links:
-      github: "https://github.com/anissawilliams/java-tutor-analytics"
-      live: ""
+      github: "https://github.com/anissawilliams/java_tutor_dashboard_v2"
+      live: "https://java-tutor-frontend.onrender.com"
 
   - id: "cfb-nil-pipeline"
-    title: "CFB NIL Data Pipeline"
-    short_description: "ETL pipeline aggregating college football NIL (Name, Image, Likeness) data."
+    title: "College Football NIL Data Pipeline"
+    short_description: "Automated ETL pipeline aggregating and standardizing college football NIL data."
     long_description: |
-      Automated data pipeline that collects, cleans, and aggregates NIL deal 
-      information for college football players. Enables analysis of NIL trends 
-      across conferences, positions, and programs.
+      A production-style ETL pipeline that collects, cleans, and aggregates NIL deal information for
+        college football players. Supports analysis of NIL trends across conferences, positions, and programs,
+        enabling deeper insight into roster economics and player valuation.
     tags:
       - "Python"
       - "ETL"
       - "SQL"
+      - "Data Engineering"
+      - "Data Visualization"
       - "Sports Analytics"
-    featured: false
+    featured: true
     screenshot_folder: "cfb_nil_pipeline"
     links:
       github: "https://github.com/anissawilliams/cfb-nil-pipeline"
 
   - id: "regulations-pipeline"
     title: "Regulations Pipeline"
-    short_description: "Automated pipeline for processing and analyzing regulatory documents."
+    short_description: "Automated pipeline for ingesting, structuring and monitoring regulatory documents at scale."
     long_description: |
-      Data pipeline that ingests regulatory documents, extracts key information, 
-      and structures the data for analysis and compliance tracking.
+      A document-processing pipeline that ingests regulatory text, extracts key entities and relationships,
+      and structures the data for downstream compliance analysis. The system maintains a record of each
+      document’s last-seen hash and update timestamp, allowing it to automatically detect when a regulation
+      has changed. When updates occur, the parser reprocesses the document, flags substantive differences,
+      and refreshes the structured output. Built with reproducibility, monitoring, and large-scale ingestion
+      in mind.
+
     tags:
       - "Python"
       - "NLP"
@@ -126,10 +159,11 @@ projects:
 
   - id: "ordinance-parser"
     title: "Ordinance Parser"
-    short_description: "NLP-powered parser for extracting structured data from municipal ordinances."
+    short_description: "NLP system for extracting structured insights from municipal ordinances."
     long_description: |
-      Uses natural language processing to parse city and municipal ordinances, 
-      extracting structured information about zoning, permits, and local regulations.
+      An NLP-powered parser that processes municipal ordinances and extracts structured information
+      related to zoning, permits, and local regulations. Designed to support civic data analysis and
+      automated compliance workflows.
     tags:
       - "Python"
       - "NLP"
@@ -139,24 +173,8 @@ projects:
     screenshot_folder: "ordinance_parser"
     links:
       github: "https://github.com/anissawilliams/ordinance-parser"
+      live: "https://ordinance-parser.onrender.com/"
 
-  - id: "cfb-chaos"
-    title: "CFB Chaos Project"
-    short_description: "Quantifying chaos and unpredictability in college football seasons."
-    long_description: |
-      Analysis project measuring "chaos" in college football - upsets, 
-      ranking volatility, and season unpredictability. Includes interactive 
-      visualizations of historical chaos metrics.
-    tags:
-      - "Python"
-      - "Data Visualization"
-      - "Sports Analytics"
-      - "Statistics"
-    featured: true
-    screenshot_folder: "cfb_chaos"
-    links:
-      github: "https://github.com/anissawilliams/cfb_chaos"
-      colab: ""
 
 # ------------------------------------------------------------
 # THEME COLORS (Garnet & Gold)
