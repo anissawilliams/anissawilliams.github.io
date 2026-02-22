@@ -82,7 +82,7 @@ projects:
       - "Flask"
       - "Data Visualization"
       - "Python"
-    featured: false
+    featured: true
     screenshots:
       - "java-analytics-1.png"
       - "java-analytics-2.png"
@@ -102,7 +102,7 @@ projects:
       - "ETL"
       - "SQL"
       - "Sports Analytics"
-    featured: true
+    featured: false
     screenshots:
       - "assets/projects/cfb_chaos/Overview_ELO_Ratings_V_Chaos.png"
     links:
@@ -156,8 +156,8 @@ projects:
       - "Statistics"
     featured: true
     screenshots:
-      - "cfb-chaos-1.png"
-      - "cfb-chaos-2.png"
+      - "assets/projects/cfb_chaos/Overview_ELO_Ratings_V_Chaos.png"
+      - "assets/projects/cfb_chaos/League-Wide_Chaos_ELO_Dist.png"
     links:
       github: "https://github.com/anissawilliams/cfb-chaos"
       colab: ""
