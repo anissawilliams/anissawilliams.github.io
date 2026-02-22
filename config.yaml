@@ -67,7 +67,7 @@ projects:
     #   - "java-tutor-1.png"
     #   - "java-tutor-2.png"
     # OPTION 2: Auto-load all images from a subfolder (just drop files in!)
-    screenshot_folder: "java-tutor"
+    screenshot_folder: "java_tutor"
     links:
       github: "https://github.com/anissawilliams/java-tutor"
       # live: ""
