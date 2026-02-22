@@ -1,8 +1,21 @@
 {
-  "java-tutor": [],
-  "java-tutor-analytics": [],
-  "cfb-nil-pipeline": [],
-  "regulations-pipeline": [],
-  "ordinance-parser": [],
-  "cfb-chaos": []
+  "cfb_chaos": [
+    "ChaosComponentELOHeatmap.png",
+    "ChaosHeatmap_ELO_Diff_V_Prob_Volatility.png",
+    "ChaosScoresByTeam.jpg",
+    "ChaosScoresByTeam.png",
+    "ChaosScoresByTeam_GameDetails.png",
+    "ChaosTimeline_GameDetails.png",
+    "ChaosTrend_Leaderboard.png",
+    "ConfChaosTrends_AvgChaosByConf.png",
+    "EloDiff_V_WinProb.jpg",
+    "EloDifferentialDistribution.jpg",
+    "EloDifferential_ChaosHeatmap.png",
+    "GameArchetypesPieChart.png",
+    "League-Wide_Chaos_ELO_Dist.png",
+    "LeagueWideChaos.jpg",
+    "LeagueWideChaos_V_Elo.jpg",
+    "Overview_AlabamaTeamDeepDive.png",
+    "Overview_ELO_Ratings_V_Chaos.png"
+  ]
 }
