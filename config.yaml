@@ -72,8 +72,8 @@ projects:
     featured: true
     screenshot_folder: "cfb_chaos"
     links:
-    github: "https://github.com/anissawilliams/cfb_chaos"
-    live: "https://cfbchaos-510.streamlit.app"
+      github: "https://github.com/anissawilliams/cfb_chaos"
+      live: "https://cfbchaos-510.streamlit.app"
 
   - id: "java-tutor"
     title: "Java Tutor"
