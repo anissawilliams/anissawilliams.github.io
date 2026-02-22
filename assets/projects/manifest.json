@@ -1,5 +1,18 @@
 {
   "java_tutor_analytics": [
     "SessionComparisons.png"
+  ],
+  "cfb_chaos": [
+    "01_EloDiff_V_WinProb.jpg",
+    "02_ChaosComponentELOHeatmap.png",
+    "03_LeagueWideChaos.jpg",
+    "04_EloDifferentialDistribution.jpg",
+    "05_ChaosScoresByTeam.jpg",
+    "06_ChaosTimeline.jpg",
+    "07_WeeklyChaos_V_EloGap.jpg",
+    "08_TeamEloTrajectories.jpg",
+    "09_Overview_AlabamaTeamDeepDive.png",
+    "10_ChaosTrend_Leaderboard.png",
+    "11_GameDetails.jpg"
   ]
 }
