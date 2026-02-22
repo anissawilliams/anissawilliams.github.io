@@ -1,6 +1,13 @@
 {
   "java_tutor_analytics": [
-    "SessionComparisons.png"
+    "01_session_comparisons.png",
+    "02_overview_both.png",
+    "03_quiz_performance.png",
+    "04_question_analysis.png",
+    "05_efficiency.png",
+    "06_survey.png",
+    "07_efficiency_recursion.png",
+    "08_efficiency_arraylist.png"
   ],
   "cfb_chaos": [
     "01_EloDiff_V_WinProb.jpg",
