@@ -32,5 +32,21 @@
     "03_logging.png",
     "04_add_new_bill.png",
     "05_updated_bills.png"
+  ],
+  "ordinance_parser": [
+    "01_parser.png",
+    "02_extracted_data.png",
+    "03_extraction_archive.png",
+    "04_extracted_json.png"
+  ],
+  "java_tutor": [
+    "01_welcome.png",
+    "02_first_prompt.png",
+    "03_visual.png",
+    "04_inner_coding.png",
+    "05_practice.png",
+    "06_quiz_questions.png",
+    "07_quiz_results.png",
+    "08_survey.png"
   ]
 }
