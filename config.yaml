@@ -104,7 +104,7 @@ projects:
       - "SQL"
       - "Sports Analytics"
     featured: false
-    screenshot_folder: "cfb-nil-pipeline"
+    screenshot_folder: "cfb_nil_pipeline"
     links:
       github: "https://github.com/anissawilliams/cfb-nil-pipeline"
 
@@ -120,7 +120,7 @@ projects:
       - "ETL"
       - "Data Engineering"
     featured: false
-    screenshot_folder: "regulations-pipeline"
+    screenshot_folder: "regulations_pipeline"
     links:
       github: "https://github.com/anissawilliams/regulations-pipeline"
 
@@ -136,7 +136,7 @@ projects:
       - "LLM"
       - "Text Processing"
     featured: false
-    screenshot_folder: "ordinance-parser"
+    screenshot_folder: "ordinance_parser"
     links:
       github: "https://github.com/anissawilliams/ordinance-parser"
 
