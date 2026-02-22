@@ -23,9 +23,14 @@
     "05_data_quality.png",
     "06_correlation_heatmap.png",
     "07_initialize_notebook.jpg",
-    "08_build_team_data_code-1.jpg",
-    "09_build_team_data_code-2.jpg",
     "10_talent_trends_code.png",
     "11_ big_data_collection.png"
+  ],
+  "regulations_pipeline": [
+    "01_dashboard.png",
+    "02_batch_check.png",
+    "03_logging.png",
+    "04_add_new_bill.png",
+    "05_updated_bills.png"
   ]
 }
