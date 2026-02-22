@@ -86,7 +86,7 @@ projects:
       - "Data Visualization"
       - "Python"
     featured: true
-    screenshot_folder: "java-tutor-analytics"
+    screenshot_folder: "java_tutor_analytics"
     links:
       github: "https://github.com/anissawilliams/java-tutor-analytics"
       live: ""
@@ -153,9 +153,9 @@ projects:
       - "Sports Analytics"
       - "Statistics"
     featured: true
-    screenshot_folder: "cfb-chaos"
+    screenshot_folder: "cfb_chaos"
     links:
-      github: "https://github.com/anissawilliams/cfb-chaos"
+      github: "https://github.com/anissawilliams/cfb_chaos"
       colab: ""
 
 # ------------------------------------------------------------
