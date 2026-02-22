@@ -55,26 +55,25 @@ skills:
 
 projects:
   - id: "cfb-chaos"
-  - title: "CFB Chaos Project"
-  - short_description: "Modeling chaos and unpredictability in college football using volatility, ELO gaps, and game-level dynamics."
-  - long_description: |
-  - A data-driven analysis of chaos in college football, quantifying unpredictability through volatility,
-  - ELO mismatches, explosive play patterns, and game-level dynamics. Includes interactive visualizations
-  - that explore team tendencies, conference trends, and season-wide momentum. This project demonstrates
-  - modeling, feature engineering, and decision-support analysis applicable to baseball environments,
-  - including leverage modeling, matchup volatility, and in-game strategy evaluation.
-  - tags:
-  - "Python"
-  - "Data Visualization"
-  - "Sports Analytics"
-  - "Statistics"
-  - "Feature Engineering"
-  - featured: true
-  - screenshot_folder: "cfb_chaos"
-  - links:
-  - github: "https://github.com/anissawilliams/cfb_chaos"
-  - live: "https://cfbchaos-510.streamlit.app"
-  - colab: ""
+    title: "CFB Chaos Project"
+    short_description: "Modeling chaos and unpredictability in college football using volatility, ELO gaps, and game-level dynamics."
+    long_description: |
+        A data-driven analysis of chaos in college football, quantifying unpredictability through volatility,
+        ELO mismatches, explosive play patterns, and game-level dynamics. Includes interactive visualizations
+        that explore team tendencies, conference trends, and season-wide momentum. This project demonstrates
+        modeling, feature engineering, and decision-support analysis applicable to baseball environments,
+        including leverage modeling, matchup volatility, and in-game strategy evaluation.
+    tags:
+        - "Python"
+        - "Data Visualization"
+        - "Sports Analytics"
+        - "Statistics"
+        - "Feature Engineering"
+    featured: true
+    screenshot_folder: "cfb_chaos"
+    links:
+    github: "https://github.com/anissawilliams/cfb_chaos"
+    live: "https://cfbchaos-510.streamlit.app"
 
   - id: "java-tutor"
     title: "Java Tutor"
