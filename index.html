@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anissa Williams | Data & Sports Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <style>
+        :root {
+            --garnet: #782F40;
+            --garnet-dark: #5a232f;
+            --garnet-light: #8f3a4d;
+            --gold: #CEB888;
+            --gold-dark: #b8a070;
+            --gold-light: #dbc9a0;
+            --dark: #1a1a1a;
+            --light: #f8f8f8;
+            --text: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            background: linear-gradient(135deg, var(--garnet) 0%, var(--garnet-dark) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(206, 184, 136, 0.1) 100%);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-photo {
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--gold);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-link:hover {
+            background: var(--gold);
+            color: var(--garnet);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .hero-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ============ SKILLS BAR ============ */
+        .skills-bar {
+            background: var(--dark);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .skills-track {
+            display: flex;
+            gap: 40px;
+            animation: scroll 20s linear infinite;
+        }
+
+        .skills-track span {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ============ PROJECTS SECTION ============ */
+        .projects-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--garnet);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(120, 47, 64, 0.15);
+        }
+
+        .project-card.featured {
+            grid-column: span 1;
+        }
+
+        @media (min-width: 768px) {
+            .project-card.featured:first-child {
+                grid-column: span 2;
+            }
+            
+            .project-card.featured:first-child .project-image {
+                height: 300px;
+            }
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--garnet) 0%, var(--garnet-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-image .placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--gold);
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--garnet);
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-tag {
+            background: var(--light);
+            color: var(--text-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* ============ LOADING STATE ============ */
+        .loading {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--text-light);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-links {
+                justify-content: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card.featured:first-child {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="loading">Loading portfolio...</div>
+    </div>
+
+    <script>
+        // Load and parse config.yaml, then render the portfolio
+        async function loadPortfolio() {
+            try {
+                const response = await fetch('config.yaml');
+                const yamlText = await response.text();
+                const config = jsyaml.load(yamlText);
+                renderPortfolio(config);
+            } catch (error) {
+                console.error('Error loading config:', error);
+                document.getElementById('app').innerHTML = `
+                    <div class="loading">
+                        <p>Error loading portfolio configuration.</p>
+                        <p style="font-size: 0.8rem; margin-top: 10px;">Check that config.yaml exists and is valid.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderPortfolio(config) {
+            const app = document.getElementById('app');
+            
+            // Sort projects: featured first
+            const sortedProjects = [...config.projects].sort((a, b) => {
+                if (a.featured && !b.featured) return -1;
+                if (!a.featured && b.featured) return 1;
+                return 0;
+            });
+
+            app.innerHTML = `
+                <!-- HERO -->
+                <section class="hero">
+                    <div class="hero-content">
+                        <div class="hero-photo">
+                            <img src="${config.headshot}" alt="${config.name}" onerror="this.style.display='none'">
+                        </div>
+                        <div class="hero-text">
+                            <p class="hero-tagline">${config.tagline}</p>
+                            <h1>${config.name}</h1>
+                            <p class="hero-subtitle">${config.subtitle}</p>
+                            <div class="hero-links">
+                                ${config.social.github ? `
+                                    <a href="${config.social.github}" class="hero-link" target="_blank">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                        GitHub
+                                    </a>
+                                ` : ''}
+                                ${config.social.linkedin ? `
+                                    <a href="${config.social.linkedin}" class="hero-link" target="_blank">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                        LinkedIn
+                                    </a>
+                                ` : ''}
+                                ${config.social.email ? `
+                                    <a href="mailto:${config.social.email}" class="hero-link">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                                        Email
+                                    </a>
+                                ` : ''}
+                                ${config.social.resume ? `
+                                    <a href="${config.social.resume}" class="hero-link" target="_blank">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg>
+                                        Resume
+                                    </a>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SKILLS BAR -->
+                <div class="skills-bar">
+                    <div class="skills-track">
+                        ${config.skills.map(s => `<span>${s}</span>`).join('')}
+                        ${config.skills.map(s => `<span>${s}</span>`).join('')}
+                    </div>
+                </div>
+
+                <!-- PROJECTS -->
+                <section class="projects-section">
+                    <div class="section-header">
+                        <h2>Featured Work</h2>
+                        <p>Data pipelines, analytics dashboards, and sports intelligence</p>
+                    </div>
+                    <div class="projects-grid">
+                        ${sortedProjects.map(project => `
+                            <a href="projects/${project.id}.html" class="project-card ${project.featured ? 'featured' : ''}">
+                                <div class="project-image">
+                                    ${project.screenshots && project.screenshots[0] 
+                                        ? `<img src="assets/projects/${project.screenshots[0]}" alt="${project.title}" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder').style.display='block';">
+                                           <div class="placeholder" style="display:none;">📊</div>`
+                                        : `<div class="placeholder">📊</div>`
+                                    }
+                                </div>
+                                <div class="project-content">
+                                    <h3>${project.title}</h3>
+                                    <p>${project.short_description}</p>
+                                    <div class="project-tags">
+                                        ${project.tags.slice(0, 4).map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                                    </div>
+                                </div>
+                            </a>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <!-- FOOTER -->
+                <footer>
+                    <p>&copy; ${new Date().getFullYear()} ${config.name} · Built with ☕ and data</p>
+                </footer>
+            `;
+        }
+
+        // Initialize
+        loadPortfolio();
+    </script>
+</body>
+</html>
