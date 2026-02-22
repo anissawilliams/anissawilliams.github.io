@@ -156,8 +156,8 @@ projects:
       - "Statistics"
     featured: true
     screenshots:
-      - "assets/projects/cfb_chaos/Overview_ELO_Ratings_V_Chaos.png"
-      - "assets/projects/cfb_chaos/League-Wide_Chaos_ELO_Dist.png"
+      - "cfb_chaos/Overview_ELO_Ratings_V_Chaos.png"
+      - "cfb_chaos/League-Wide_Chaos_ELO_Dist.png"
     links:
       github: "https://github.com/anissawilliams/cfb-chaos"
       colab: ""
