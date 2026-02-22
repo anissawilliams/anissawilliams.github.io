@@ -1,4 +1,7 @@
 {
+  "java_tutor_analytics": [
+    "SessionComparisons.png"
+  ],
   "cfb_chaos": [
     "ChaosComponentELOHeatmap.png",
     "ChaosHeatmap_ELO_Diff_V_Prob_Volatility.png",
