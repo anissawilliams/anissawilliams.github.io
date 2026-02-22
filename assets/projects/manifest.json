@@ -3,6 +3,7 @@
     "SessionComparisons.png"
   ],
   "cfb_chaos": [
+    "1-Overview_ELO_Ratings_V_Chaos.png",
     "ChaosComponentELOHeatmap.png",
     "ChaosHeatmap_ELO_Diff_V_Prob_Volatility.png",
     "ChaosScoresByTeam.jpg",
@@ -18,7 +19,6 @@
     "League-Wide_Chaos_ELO_Dist.png",
     "LeagueWideChaos.jpg",
     "LeagueWideChaos_V_Elo.jpg",
-    "Overview_AlabamaTeamDeepDive.png",
-    "Overview_ELO_Ratings_V_Chaos.png"
+    "Overview_AlabamaTeamDeepDive.png"
   ]
 }
