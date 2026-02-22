@@ -62,9 +62,12 @@ projects:
       - "AI/LLM"
       - "Education"
     featured: true
-    screenshots:
-      - "java-tutor-1.png"
-      - "java-tutor-2.png"
+    # OPTION 1: List specific screenshots
+    # screenshots:
+    #   - "java-tutor-1.png"
+    #   - "java-tutor-2.png"
+    # OPTION 2: Auto-load all images from a subfolder (just drop files in!)
+    screenshot_folder: "java-tutor"
     links:
       github: "https://github.com/anissawilliams/java-tutor"
       # live: ""
@@ -83,9 +86,7 @@ projects:
       - "Data Visualization"
       - "Python"
     featured: true
-    screenshots:
-      - "java-analytics-1.png"
-      - "java-analytics-2.png"
+    screenshot_folder: "java-tutor-analytics"
     links:
       github: "https://github.com/anissawilliams/java-tutor-analytics"
       live: ""
@@ -103,8 +104,7 @@ projects:
       - "SQL"
       - "Sports Analytics"
     featured: false
-    screenshots:
-      - "cfb_chaos/Overview_ELO_Ratings_V_Chaos.png"
+    screenshot_folder: "cfb-nil-pipeline"
     links:
       github: "https://github.com/anissawilliams/cfb-nil-pipeline"
 
@@ -120,8 +120,7 @@ projects:
       - "ETL"
       - "Data Engineering"
     featured: false
-    screenshots:
-      - "regulations-1.png"
+    screenshot_folder: "regulations-pipeline"
     links:
       github: "https://github.com/anissawilliams/regulations-pipeline"
 
@@ -137,8 +136,7 @@ projects:
       - "LLM"
       - "Text Processing"
     featured: false
-    screenshots:
-      - "ordinance-1.png"
+    screenshot_folder: "ordinance-parser"
     links:
       github: "https://github.com/anissawilliams/ordinance-parser"
 
@@ -155,10 +153,7 @@ projects:
       - "Sports Analytics"
       - "Statistics"
     featured: true
-    screenshots:
-      - "cfb_chaos/Overview_ELO_Ratings_V_Chaos.png"
-      - "cfb_chaos/Overview_ELO_Ratings_V_Chaos.png"
-      - "cfb_chaos/League-Wide_Chaos_ELO_Dist.png"
+    screenshot_folder: "cfb-chaos"
     links:
       github: "https://github.com/anissawilliams/cfb-chaos"
       colab: ""

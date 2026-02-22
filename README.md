@@ -53,14 +53,29 @@ projects:
       colab: "https://colab.research.google.com/..."
 ```
 
-### Adding Screenshots
+### Adding Screenshots (Easy Way - Just Drop Files!)
 
-1. Add your image files to `assets/projects/`
-2. Update `config.yaml` with the filenames:
-   ```yaml
-   screenshots:
-     - "my-screenshot.png"
+1. Create a folder in `assets/projects/` matching your project ID:
    ```
+   assets/projects/
+   ├── java-tutor/
+   │   ├── overview.png
+   │   ├── results.png
+   │   └── chart.png
+   ├── cfb-chaos/
+   │   └── visualization.png
+   ```
+
+2. Run the manifest generator:
+   ```bash
+   python generate_manifest.py
+   ```
+
+3. Commit and push - done!
+
+The manifest auto-detects all `.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.svg` files.
+
+**Pro tip:** Name files with numbers to control order: `01-overview.png`, `02-results.png`
 
 ### Adding a New Project Page
 
@@ -78,12 +93,17 @@ That's it! The page auto-loads content from the config.
 portfolio/
 ├── index.html              # Homepage
 ├── config.yaml             # ✏️ EDIT THIS to update content
+├── generate_manifest.py    # Run after adding screenshots
 ├── README.md               # This file
 ├── assets/
 │   ├── headshot.png        # Your photo
-│   └── projects/           # 📸 Drop screenshots here
-│       ├── java-tutor-1.png
-│       ├── cfb-chaos-1.png
+│   └── projects/           # 📸 Screenshot folders
+│       ├── manifest.json   # Auto-generated, don't edit
+│       ├── java-tutor/
+│       │   ├── 01-overview.png
+│       │   └── 02-results.png
+│       ├── cfb-chaos/
+│       │   └── visualization.png
 │       └── ...
 └── projects/               # Individual project pages
     ├── java-tutor.html

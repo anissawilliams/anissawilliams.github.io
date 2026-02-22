@@ -345,9 +345,29 @@
         // Load and parse config.yaml, then render the portfolio
         async function loadPortfolio() {
             try {
-                const response = await fetch('config.yaml');
-                const yamlText = await response.text();
+                const [configResponse, manifestResponse] = await Promise.all([
+                    fetch('config.yaml'),
+                    fetch('assets/projects/manifest.json').catch(() => ({ ok: false }))
+                ]);
+                
+                const yamlText = await configResponse.text();
                 const config = jsyaml.load(yamlText);
+                
+                // Load manifest if available
+                let manifest = {};
+                if (manifestResponse.ok) {
+                    manifest = await manifestResponse.json();
+                }
+                
+                // Merge manifest into config (screenshot_folder -> screenshots)
+                config.projects = config.projects.map(project => {
+                    if (project.screenshot_folder && manifest[project.screenshot_folder]) {
+                        project.screenshots = manifest[project.screenshot_folder];
+                        project._useFolder = true; // Flag to use subfolder path
+                    }
+                    return project;
+                });
+                
                 renderPortfolio(config);
             } catch (error) {
                 console.error('Error loading config:', error);
@@ -430,7 +450,7 @@
                             <a href="projects/${project.id}.html" class="project-card ${project.featured ? 'featured' : ''}">
                                 <div class="project-image">
                                     ${project.screenshots && project.screenshots[0] 
-                                        ? `<img src="assets/projects/${project.screenshots[0]}" alt="${project.title}" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder').style.display='block';">
+                                        ? `<img src="assets/projects/${project._useFolder ? project.screenshot_folder + '/' : ''}${project.screenshots[0]}" alt="${project.title}" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder').style.display='block';">
                                            <div class="placeholder" style="display:none;">📊</div>`
                                         : `<div class="placeholder">📊</div>`
                                     }

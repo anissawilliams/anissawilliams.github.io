@@ -282,15 +282,31 @@
 
         async function loadProject() {
             try {
-                const response = await fetch('../config.yaml');
-                const yamlText = await response.text();
+                const [configResponse, manifestResponse] = await Promise.all([
+                    fetch('../config.yaml'),
+                    fetch('../assets/projects/manifest.json').catch(() => ({ ok: false }))
+                ]);
+                
+                const yamlText = await configResponse.text();
                 const config = jsyaml.load(yamlText);
+                
+                // Load manifest if available
+                let manifest = {};
+                if (manifestResponse.ok) {
+                    manifest = await manifestResponse.json();
+                }
                 
                 const projectId = getProjectId();
                 const project = config.projects.find(p => p.id === projectId);
                 
                 if (!project) {
                     throw new Error('Project not found');
+                }
+                
+                // Merge manifest screenshots if using folder
+                if (project.screenshot_folder && manifest[project.screenshot_folder]) {
+                    project.screenshots = manifest[project.screenshot_folder];
+                    project._useFolder = true;
                 }
                 
                 renderProject(project, config);
@@ -362,13 +378,13 @@
                         ${project.screenshots && project.screenshots.length > 0 
                             ? project.screenshots.map(img => `
                                 <div class="screenshot-item">
-                                    <img src="../assets/projects/${img}" alt="${project.title} screenshot" 
-                                         onerror="this.parentElement.classList.add('placeholder'); this.parentElement.innerHTML='Screenshot: ${img}<br><small>Add image to assets/projects/</small>';">
+                                    <img src="../assets/projects/${project._useFolder ? project.screenshot_folder + '/' : ''}${img}" alt="${project.title} screenshot" 
+                                         onerror="this.parentElement.classList.add('placeholder'); this.parentElement.innerHTML='Screenshot: ${img}<br><small>Add image to assets/projects/${project.screenshot_folder || ''}</small>';">
                                 </div>
                             `).join('')
                             : `<div class="screenshot-item placeholder">
                                     No screenshots yet.<br>
-                                    <small>Add images to assets/projects/ and update config.yaml</small>
+                                    <small>Add images to assets/projects/${project.screenshot_folder || project.id}/ and run generate_manifest.py</small>
                                </div>`
                         }
                     </div>
