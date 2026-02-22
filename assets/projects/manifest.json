@@ -14,5 +14,13 @@
     "09_Overview_AlabamaTeamDeepDive.png",
     "10_ChaosTrend_Leaderboard.png",
     "11_GameDetails.jpg"
+  ],
+  "cfb_nil_pipeline": [
+    "01_talent_vs_wins.png",
+    "02_conference_sp_ratings.png",
+    "03_offense_vs_defense.png",
+    "04_talent_trends.png",
+    "05_data_quality.png",
+    "06_correlation_heatmap.png"
   ]
 }
