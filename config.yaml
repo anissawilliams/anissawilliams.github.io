@@ -61,7 +61,7 @@ projects:
       - "Python"
       - "AI/LLM"
       - "Education"
-    featured: true
+    featured: false
     # OPTION 1: List specific screenshots
     # screenshots:
     #   - "java-tutor-1.png"
