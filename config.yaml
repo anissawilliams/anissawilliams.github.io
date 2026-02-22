@@ -104,7 +104,7 @@ projects:
       - "Sports Analytics"
     featured: false
     screenshots:
-      - "assets/projects/cfb_chaos/Overview_ELO_Ratings_V_Chaos.png"
+      - "cfb_chaos/Overview_ELO_Ratings_V_Chaos.png"
     links:
       github: "https://github.com/anissawilliams/cfb-nil-pipeline"
 
