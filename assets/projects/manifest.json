@@ -1,14 +1,68 @@
 {
-  "cofc_soccer": [
-    "coug_table_ui.png",
-    "season_coug_table.png",
-    "match_breakdown.png",
-    "player_trend_white.png",
-    "player_trend_jordheim.png"
+  "cfb_nil_pipeline": [
+    "01_talent_vs_wins.png",
+    "02_conference_sp_ratings.png",
+    "03_offense_vs_defense.png",
+    "04_talent_trends.png",
+    "05_data_quality.png",
+    "06_correlation_heatmap.png",
+    "10_talent_trends_code.png",
+    "11_ big_data_collection.png"
   ],
-  "portaliq": [],
-  "cfb_chaos": [],
-  "java_tutor": [],  s
-  "java_tutor_analytics": [],
-  "cfb_nil_pipeline": []
+  "cfb_chaos": [
+    "01_EloDiff_V_WinProb.jpg",
+    "02_ChaosComponentELOHeatmap.png",
+    "03_LeagueWideChaos.jpg",
+    "04_EloDifferentialDistribution.jpg",
+    "05_ChaosScoresByTeam.jpg",
+    "06_ChaosTimeline.jpg",
+    "07_WeeklyChaos_V_EloGap.jpg",
+    "08_TeamEloTrajectories.jpg",
+    "09_Overview_AlabamaTeamDeepDive.png",
+    "10_ChaosTrend_Leaderboard.png",
+    "11_GameDetails.jpg",
+    "13_GameArchetypesPieChart.png",
+    "14_ConfChaosTrends_AvgChaosByConf.png",
+    "15_WeeklyConfChaos_AccChaosMomentum.png",
+    "16_ChaosScoresByTeam.png"
+  ],
+  "cofc_soccer": [
+    "match_breakdown.png",
+    "player_trend_jordheim.png",
+    "player_trend_white.png",
+    "season_coug_table.png"
+  ],
+  "java_tutor": [
+    "01_welcome.png",
+    "02_first_prompt.png",
+    "03_visual.png",
+    "04_inner_coding.png",
+    "05_practice.png",
+    "06_quiz_questions.png",
+    "07_quiz_results.png",
+    "08_survey.png"
+  ],
+  "ordinance_parser": [
+    "01_parser.png",
+    "02_extracted_data.png",
+    "03_extraction_archive.png",
+    "04_extracted_json.png"
+  ],
+  "regulations_pipeline": [
+    "01_dashboard.png",
+    "02_batch_check.png",
+    "03_logging.png",
+    "04_add_new_bill.png",
+    "05_updated_bills.png"
+  ],
+  "java_tutor_analytics": [
+    "01_session_comparisons.png",
+    "02_overview_both.png",
+    "03_quiz_performance.png",
+    "04_question_analysis.png",
+    "05_efficiency.png",
+    "06_survey.png",
+    "07_efficiency_recursion.png",
+    "08_efficiency_arraylist.png"
+  ]
 }
