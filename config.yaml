@@ -4,8 +4,8 @@
 
 name: "Anissa Williams"
 tagline: "Technical. Tactical. Analytical."
-subtitle: "Head of Sports Performance & Data Intelligence"
-role: "I build data intelligence platforms and decision-support tools for sports organizations — player evaluation pipelines, NIL analytics, match prediction, and physical performance monitoring — with a focus on clarity, modeling, and real-world impact."
+subtitle: "Applied AI Engineer · Head of Sports Performance & Data Intelligence"
+role: "I build AI-assisted systems, automation pipelines, and data intelligence platforms — from LLM-powered extraction workflows and RAG architectures to sports analytics infrastructure and full-stack APIs. Different domains, consistent delivery."
 headshot: "assets/headshot.png"
 
 social:
@@ -17,33 +17,36 @@ skills:
   - "Python"
   - "SQL"
   - "FastAPI"
-  - "Sports Analytics"
+  - "OpenAI API"
+  - "Claude API"
+  - "RAG"
+  - "LLM Systems"
+  - "Machine Learning"
   - "Data Pipelines"
   - "Statistical Modeling"
-  - "Machine Learning"
   - "Data Visualization"
-  - "ETL"
+  - "Docker"
   - "React"
-  - "AI/LLM"
-  - "NLP"
+  - "Sports Analytics"
 
 projects:
   - id: "portaliq"
     title: "PortalIQ"
-    short_description: "CFB NIL & Transfer Portal analytics platform — live API serving player valuations, class projections, and historical comps for front office decision-making."
+    short_description: "Full-stack CFB NIL & Transfer Portal intelligence platform — live REST API serving player valuations, class projections, moneyball scoring, and retention risk for front office decision-making."
     long_description: |
-      A full-stack sports intelligence platform built for college football front offices. PortalIQ
-      combines NIL estimation modeling, transfer portal data, and historical comp analysis to help
-      programs make smarter roster construction decisions. Features include moneyball player scoring,
-      budget optimization, class-level win projections, and retention risk flagging — all served
-      via a live REST API with multi-tenant authentication.
+      A production-grade sports intelligence platform built for college football front offices.
+      PortalIQ combines NIL estimation modeling (XGBoost + Ridge ensemble), transfer portal data,
+      and historical comp analysis to help programs make smarter roster construction decisions.
+      Features include moneyball player scoring, budget optimization, class-level win projections,
+      and retention risk flagging — all served via a live REST API with multi-tenant Supabase
+      authentication and school-scoped data access.
     tags:
       - "FastAPI"
       - "Python"
       - "Supabase"
-      - "Sports Analytics"
       - "Machine Learning"
       - "REST API"
+      - "XGBoost"
     featured: true
     screenshot_folder: "portaliq"
     links:
@@ -51,16 +54,18 @@ projects:
 
   - id: "cofc-soccer"
     title: "CofC Soccer Analytics Pipeline"
-    short_description: "Automated player evaluation and match intelligence platform for College of Charleston Men's Soccer — built on Wyscout data with the COUGS Table proprietary framework."
+    short_description: "Automated player evaluation and match intelligence platform for College of Charleston Men's Soccer — predictive modeling, Monte Carlo simulation, and the proprietary COUGS Table performance framework."
     long_description: |
       A production analytics pipeline built for the College of Charleston Men's Soccer program.
       Ingests Wyscout match data to automatically compute the COUGS Table — a proprietary player
       evaluation framework covering defensive (ASET), offensive (PEAK), and set piece contributions.
-      Built for reproducibility and automation to allow insights at your fingertips.
+      Includes a match outcome prediction model (XGBoost, 62.5% LOO accuracy vs 33% baseline),
+      Monte Carlo simulation engine (10,000 iterations, Poisson goal modeling), and automated
+      scouting reports. Built for reproducibility and automation to allow insights at your fingertips.
     tags:
       - "Python"
-      - "Sports Analytics"
-      - "Machine Learning"
+      - "XGBoost"
+      - "Monte Carlo"
       - "Wyscout"
       - "Data Pipeline"
       - "Scouting"
@@ -92,6 +97,28 @@ projects:
       github: "https://github.com/anissawilliams/cfb_chaos"
       live: "https://cfbchaos-510.streamlit.app"
 
+  - id: "java-tutor"
+    title: "Java AI Tutor"
+    short_description: "RAG-based intelligent tutoring system with multi-agent CrewAI architecture — scaffolded 3-condition experimental design, ACM submission pending."
+    long_description: |
+      An intelligent tutoring system that delivers adaptive, scaffolded instruction for Java programming.
+      Originally built with RAG retrieval and a CrewAI multi-agent framework, then evolved into a
+      controlled 3-condition experimental model to isolate the effect of AI scaffolding on learning
+      outcomes. Streamlit-based chat interface with full conversation state management.
+      Research currently under review with ACM.
+    tags:
+      - "Python"
+      - "RAG"
+      - "CrewAI"
+      - "LLM"
+      - "Education"
+      - "Streamlit"
+    featured: false
+    screenshot_folder: "java_tutor"
+    links:
+      github: "https://github.com/anissawilliams/java_ai_tutor_clean"
+      live: "https://cofc-java-scaffolded-tutor.streamlit.app"
+
   - id: "java-tutor-analytics"
     title: "Java Tutor Analytics Dashboard"
     short_description: "Interactive dashboard analyzing learning outcomes, engagement patterns, and cross-session performance across AI tutoring conditions."
@@ -110,42 +137,6 @@ projects:
     links:
       github: "https://github.com/anissawilliams/java_tutor_dashboard_v2"
       live: "https://java-tutor-frontend.onrender.com"
-
-  - id: "java-tutor"
-    title: "Java Tutor"
-    short_description: "AI-powered tutoring system that teaches Java concepts through adaptive, scaffolded instruction."
-    long_description: |
-      An intelligent tutoring system that delivers adaptive, scaffolded instruction for Java programming.
-      Compares character-based, non-character, and direct-chat conditions to evaluate learning effectiveness
-      across multiple student cohorts.
-    tags:
-      - "Python"
-      - "AI/LLM"
-      - "Education"
-      - "NLP"
-    featured: false
-    screenshot_folder: "java_tutor"
-    links:
-      github: "https://github.com/anissawilliams/java_ai_tutor_clean"
-      live: "https://cofc-java-scaffolded-tutor.streamlit.app"
-
-  - id: "cfb-nil-pipeline"
-    title: "College Football NIL Data Pipeline"
-    short_description: "Automated ETL pipeline aggregating and standardizing college football NIL data across programs and conferences."
-    long_description: |
-      A production-style ETL pipeline that collects, cleans, and aggregates NIL deal information for
-      college football players. Supports analysis of NIL trends across conferences, positions, and programs,
-      enabling deeper insight into roster economics and player valuation. Foundational data layer for PortalIQ.
-    tags:
-      - "Python"
-      - "ETL"
-      - "SQL"
-      - "Data Engineering"
-      - "Sports Analytics"
-    featured: false
-    screenshot_folder: "cfb_nil_pipeline"
-    links:
-      github: "https://github.com/anissawilliams/cfb-nil-pipeline"
 
 theme:
   primary: "#782F40"
