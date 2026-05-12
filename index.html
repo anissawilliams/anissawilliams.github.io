@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <style>
         :root {
@@ -23,11 +24,7 @@
             --white: #ffffff;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -36,7 +33,7 @@
             line-height: 1.6;
         }
 
-        /* ============ HERO SECTION ============ */
+        /* ============ HERO ============ */
         .hero {
             background: linear-gradient(135deg, var(--garnet) 0%, var(--garnet-dark) 100%);
             color: var(--white);
@@ -48,10 +45,8 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
+            top: 0; right: 0;
+            width: 40%; height: 100%;
             background: linear-gradient(135deg, transparent 0%, rgba(206, 184, 136, 0.1) 100%);
             clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
         }
@@ -66,17 +61,14 @@
             z-index: 1;
         }
 
-        .hero-photo {
-            flex-shrink: 0;
-        }
+        .hero-photo { flex-shrink: 0; }
 
         .hero-photo img {
-            width: 200px;
-            height: 200px;
+            width: 200px; height: 200px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--gold);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
         .hero-text h1 {
@@ -108,6 +100,7 @@
             max-width: 600px;
             line-height: 1.6;
         }
+
         .hero-links {
             display: flex;
             gap: 16px;
@@ -119,8 +112,8 @@
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
             border-radius: 8px;
             color: var(--white);
             text-decoration: none;
@@ -135,10 +128,7 @@
             transform: translateY(-2px);
         }
 
-        .hero-link svg {
-            width: 18px;
-            height: 18px;
-        }
+        .hero-link svg { width: 18px; height: 18px; }
 
         /* ============ SKILLS BAR ============ */
         .skills-bar {
@@ -167,7 +157,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* ============ PROJECTS SECTION ============ */
+        /* ============ PROJECTS ============ */
         .projects-section {
             max-width: 1200px;
             margin: 0 auto;
@@ -201,9 +191,8 @@
             background: var(--white);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            cursor: pointer;
             text-decoration: none;
             color: inherit;
             display: block;
@@ -211,18 +200,13 @@
 
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(120, 47, 64, 0.15);
-        }
-
-        .project-card.featured {
-            grid-column: span 1;
+            box-shadow: 0 12px 40px rgba(120,47,64,0.15);
         }
 
         @media (min-width: 768px) {
             .project-card.featured:first-child {
                 grid-column: span 2;
             }
-            
             .project-card.featured:first-child .project-image {
                 height: 300px;
             }
@@ -235,30 +219,66 @@
             overflow: hidden;
         }
 
-        .project-image img {
+        /* Screenshot strip for multiple images */
+        .screenshot-strip {
+            display: flex;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .screenshot-strip a {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            display: block;
+        }
+
+        .screenshot-strip a:not(:last-child) {
+            border-right: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .screenshot-strip img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
+        .screenshot-strip a:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Expand icon on hover */
+        .screenshot-strip a::after {
+            content: '⤢';
+            position: absolute;
+            top: 8px; right: 8px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            width: 24px; height: 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .screenshot-strip a:hover::after {
+            opacity: 1;
         }
 
         .project-image .placeholder {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             color: var(--gold);
             font-size: 3rem;
             opacity: 0.5;
         }
 
-        .project-content {
-            padding: 24px;
-        }
+        .project-content { padding: 24px; }
 
         .project-content h3 {
             font-size: 1.3rem;
@@ -297,17 +317,9 @@
             text-align: center;
         }
 
-        footer p {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
+        footer p { opacity: 0.7; font-size: 0.9rem; }
+        footer a { color: var(--gold); text-decoration: none; }
 
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        /* ============ LOADING STATE ============ */
         .loading {
             text-align: center;
             padding: 100px 20px;
@@ -316,30 +328,12 @@
 
         /* ============ RESPONSIVE ============ */
         @media (max-width: 768px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-tagline {
-                font-size: 1.2rem;
-            }
-
-            .hero-links {
-                justify-content: center;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card.featured:first-child {
-                grid-column: span 1;
-            }
+            .hero-content { flex-direction: column; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-tagline { font-size: 1.2rem; }
+            .hero-links { justify-content: center; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .project-card.featured:first-child { grid-column: span 1; }
         }
     </style>
 </head>
@@ -348,49 +342,84 @@
         <div class="loading">Loading portfolio...</div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
-        // Load and parse config.yaml, then render the portfolio
         async function loadPortfolio() {
             try {
                 const [configResponse, manifestResponse] = await Promise.all([
                     fetch('config.yaml'),
                     fetch('assets/projects/manifest.json').catch(() => ({ ok: false }))
                 ]);
-                
+
                 const yamlText = await configResponse.text();
                 const config = jsyaml.load(yamlText);
-                
-                // Load manifest if available
+
                 let manifest = {};
                 if (manifestResponse.ok) {
                     manifest = await manifestResponse.json();
                 }
-                
-                // Merge manifest into config (screenshot_folder -> screenshots)
+
                 config.projects = config.projects.map(project => {
                     if (project.screenshot_folder && manifest[project.screenshot_folder]) {
                         project.screenshots = manifest[project.screenshot_folder];
-                        project._useFolder = true; // Flag to use subfolder path
+                        project._useFolder = true;
                     }
                     return project;
                 });
-                
+
                 renderPortfolio(config);
             } catch (error) {
                 console.error('Error loading config:', error);
                 document.getElementById('app').innerHTML = `
                     <div class="loading">
                         <p>Error loading portfolio configuration.</p>
-                        <p style="font-size: 0.8rem; margin-top: 10px;">Check that config.yaml exists and is valid.</p>
-                    </div>
-                `;
+                        <p style="font-size:0.8rem;margin-top:10px;">Check that config.yaml exists and is valid.</p>
+                    </div>`;
             }
+        }
+
+        function buildImageSection(project) {
+            if (!project.screenshots || project.screenshots.length === 0) {
+                return `<div class="placeholder">📊</div>`;
+            }
+
+            const basePath = `assets/projects/${project._useFolder ? project.screenshot_folder + '/' : ''}`;
+            const galleryId = `gallery-${project.id}`;
+
+            // Show up to 3 screenshots as a strip; rest are hidden anchors for lightbox
+            const visible = project.screenshots.slice(0, 3);
+            const hidden  = project.screenshots.slice(3);
+
+            const stripItems = visible.map((src, i) => `
+                <a href="${basePath}${src}"
+                   class="glightbox"
+                   data-gallery="${galleryId}"
+                   data-description="${project.title}"
+                   onclick="event.stopPropagation()">
+                    <img src="${basePath}${src}"
+                         alt="${project.title} screenshot ${i + 1}"
+                         onerror="this.parentElement.style.display='none'">
+                </a>
+            `).join('');
+
+            // Hidden anchors so lightbox can paginate through all screenshots
+            const hiddenItems = hidden.map(src => `
+                <a href="${basePath}${src}"
+                   class="glightbox"
+                   data-gallery="${galleryId}"
+                   style="display:none"
+                   onclick="event.stopPropagation()"></a>
+            `).join('');
+
+            return `
+                <div class="screenshot-strip">${stripItems}</div>
+                ${hiddenItems}
+            `;
         }
 
         function renderPortfolio(config) {
             const app = document.getElementById('app');
-            
-            // Sort projects: featured first
+
             const sortedProjects = [...config.projects].sort((a, b) => {
                 if (a.featured && !b.featured) return -1;
                 if (!a.featured && b.featured) return 1;
@@ -398,7 +427,6 @@
             });
 
             app.innerHTML = `
-                <!-- HERO -->
                 <section class="hero">
                     <div class="hero-content">
                         <div class="hero-photo">
@@ -408,38 +436,33 @@
                             <p class="hero-tagline">${config.tagline}</p>
                             <h1>${config.name}</h1>
                             <p class="hero-subtitle">${config.subtitle}</p>
-                                ${config.role ? `<p class="hero-role">${config.role}</p>` : ''}
+                            ${config.role ? `<p class="hero-role">${config.role}</p>` : ''}
                             <div class="hero-links">
                                 ${config.social.github ? `
                                     <a href="${config.social.github}" class="hero-link" target="_blank">
                                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                                         GitHub
-                                    </a>
-                                ` : ''}
+                                    </a>` : ''}
                                 ${config.social.linkedin ? `
                                     <a href="${config.social.linkedin}" class="hero-link" target="_blank">
                                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                                         LinkedIn
-                                    </a>
-                                ` : ''}
+                                    </a>` : ''}
                                 ${config.social.email ? `
                                     <a href="mailto:${config.social.email}" class="hero-link">
                                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
                                         Email
-                                    </a>
-                                ` : ''}
+                                    </a>` : ''}
                                 ${config.social.resume ? `
                                     <a href="${config.social.resume}" class="hero-link" target="_blank">
                                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg>
                                         Resume
-                                    </a>
-                                ` : ''}
+                                    </a>` : ''}
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- SKILLS BAR -->
                 <div class="skills-bar">
                     <div class="skills-track">
                         ${config.skills.map(s => `<span>${s}</span>`).join('')}
@@ -447,21 +470,17 @@
                     </div>
                 </div>
 
-                <!-- PROJECTS -->
                 <section class="projects-section">
                     <div class="section-header">
                         <h2>Featured Work</h2>
-                        <p>Data pipelines, analytics dashboards, and sports intelligence</p>
+                        <p>Data pipelines, analytics platforms, and sports intelligence</p>
                     </div>
                     <div class="projects-grid">
                         ${sortedProjects.map(project => `
-                            <a href="projects/${project.id}.html" class="project-card ${project.featured ? 'featured' : ''}">
+                            <a href="projects/${project.id}.html"
+                               class="project-card ${project.featured ? 'featured' : ''}">
                                 <div class="project-image">
-                                    ${project.screenshots && project.screenshots[0] 
-                                        ? `<img src="assets/projects/${project._useFolder ? project.screenshot_folder + '/' : ''}${project.screenshots[0]}" alt="${project.title}" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder').style.display='block';">
-                                           <div class="placeholder" style="display:none;">📊</div>`
-                                        : `<div class="placeholder">📊</div>`
-                                    }
+                                    ${buildImageSection(project)}
                                 </div>
                                 <div class="project-content">
                                     <h3>${project.title}</h3>
@@ -475,14 +494,21 @@
                     </div>
                 </section>
 
-                <!-- FOOTER -->
                 <footer>
                     <p>&copy; ${new Date().getFullYear()} ${config.name} · Built with ☕ and data</p>
                 </footer>
             `;
+
+            // Initialize GLightbox after DOM is rendered
+            GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true,
+                autoplayVideos: false,
+                onOpen: () => {},
+            });
         }
 
-        // Initialize
         loadPortfolio();
     </script>
 </body>

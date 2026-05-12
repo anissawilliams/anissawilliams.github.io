@@ -4,8 +4,8 @@
 
 name: "Anissa Williams"
 tagline: "Technical. Tactical. Analytical."
-subtitle: "Engineering data systems for the modern game."
-role: "I build data systems and decision-support tools for sports, education, and supply chain analytics, with a focus on clarity, modeling, and reproducibility."
+subtitle: "Head of Sports Performance & Data Intelligence"
+role: "I build data intelligence platforms and decision-support tools for sports organizations — player evaluation pipelines, NIL analytics, match prediction, and physical performance monitoring — with a focus on clarity, modeling, and real-world impact."
 headshot: "assets/headshot.png"
 
 social:
@@ -16,27 +16,75 @@ social:
 skills:
   - "Python"
   - "SQL"
-  - "Data Pipelines"
+  - "FastAPI"
   - "Sports Analytics"
+  - "Data Pipelines"
   - "Statistical Modeling"
+  - "Machine Learning"
   - "Data Visualization"
   - "ETL"
-  - "Machine Learning"
+  - "React"
   - "AI/LLM"
   - "NLP"
-  - "React"
 
 projects:
-  - id: "cfb-chaos"
-    title: "CFB Chaos Project"
-    short_description: "Modeling chaos and unpredictability in college football using volatility, ELO gaps, and game-level dynamics."
+  - id: "portaliq"
+    title: "PortalIQ"
+    short_description: "CFB NIL & Transfer Portal analytics platform — live API serving player valuations, class projections, and historical comps for front office decision-making."
     long_description: |
-      A data-driven analysis of chaos in college football, quantifying unpredictability through volatility,
-      ELO mismatches, explosive play patterns, and game-level dynamics. Includes interactive visualizations
-      that explore team tendencies, conference trends, and season-wide momentum.
+      A full-stack sports intelligence platform built for college football front offices. PortalIQ
+      combines NIL estimation modeling, transfer portal data, and historical comp analysis to help
+      programs make smarter roster construction decisions. Features include moneyball player scoring,
+      budget optimization, class-level win projections, and retention risk flagging — all served
+      via a live REST API with multi-tenant authentication.
+    tags:
+      - "FastAPI"
+      - "Python"
+      - "Supabase"
+      - "Sports Analytics"
+      - "Machine Learning"
+      - "REST API"
+    featured: true
+    screenshot_folder: "portaliq"
+    links:
+      live: "https://portaliq-production.up.railway.app/docs"
+
+  - id: "cofc-soccer"
+    title: "CofC Soccer Analytics Pipeline"
+    short_description: "Automated player evaluation system for College of Charleston Men's Soccer — COUG Table scoring, match prediction, and Monte Carlo simulation built on Wyscout data."
+    long_description: |
+      A production analytics pipeline built for the College of Charleston Men's Soccer program.
+      Ingests Wyscout match data to automatically compute the COUG Table — a proprietary player
+      evaluation framework covering defensive (ASET), offensive (PEAK), and set piece contributions.
+      Includes a logistic regression match prediction model with 62.5% LOO accuracy, Monte Carlo
+      win probability simulation, and an automated pre-match scouting report generator.
+      Built to be maintained by undergraduate research assistants season over season.
     tags:
       - "Python"
-      - "Data Visualization"
+      - "Sports Analytics"
+      - "Machine Learning"
+      - "Wyscout"
+      - "Data Pipeline"
+      - "Scouting"
+    featured: true
+    screenshot_folder: "cofc_soccer"
+    links:
+      github: "https://github.com/anissawilliams/cofc_soccer_analytics_2026"
+
+  - id: "cfb-chaos"
+    title: "CFB Chaos Factor"
+    short_description: "Novel volatility metric for college football — quantifying game unpredictability through win probability swings, lead changes, and explosive play differentials. Targeting JQAS publication."
+    long_description: |
+      A research project introducing the Chaos Factor, a novel metric that quantifies volatility
+      in college football games. Derived from win probability fluctuations, lead changes, and
+      explosive play differentials, chaos captures dimensions of unpredictability that traditional
+      ELO ratings overlook. Analysis of 4,600+ Power Five matchups (2018-2021) shows that chaos
+      improves upset prediction by 27 percentage points over ELO alone. Co-authored with Braeden
+      Mefford (College of Charleston). Targeting submission to Journal of Quantitative Analysis
+      in Sports (JQAS).
+    tags:
+      - "Python"
+      - "Research"
       - "Sports Analytics"
       - "Statistics"
       - "Feature Engineering"
@@ -45,6 +93,25 @@ projects:
     links:
       github: "https://github.com/anissawilliams/cfb_chaos"
       live: "https://cfbchaos-510.streamlit.app"
+
+  - id: "java-tutor-analytics"
+    title: "Java Tutor Analytics Dashboard"
+    short_description: "Interactive dashboard analyzing learning outcomes, engagement patterns, and cross-session performance across AI tutoring conditions."
+    long_description: |
+      A React + Flask analytics dashboard visualizing quiz performance, engagement metrics, and survey data
+      from an AI tutoring study. Includes per-question difficulty analysis, condition-level comparisons,
+      and cross-session improvement tracking across character-based, direct, and non-character conditions.
+    tags:
+      - "React"
+      - "Flask"
+      - "Data Visualization"
+      - "Python"
+      - "Education"
+    featured: false
+    screenshot_folder: "java_tutor_analytics"
+    links:
+      github: "https://github.com/anissawilliams/java_tutor_dashboard_v2"
+      live: "https://java-tutor-frontend.onrender.com"
 
   - id: "java-tutor"
     title: "Java Tutor"
@@ -57,83 +124,30 @@ projects:
       - "Python"
       - "AI/LLM"
       - "Education"
+      - "NLP"
     featured: false
     screenshot_folder: "java_tutor"
     links:
       github: "https://github.com/anissawilliams/java_ai_tutor_clean"
       live: "https://cofc-java-scaffolded-tutor.streamlit.app"
 
-  - id: "java-tutor-analytics"
-    title: "Java Tutor Analytics Dashboard"
-    short_description: "Interactive dashboard analyzing learning outcomes, engagement patterns, and cross-session performance."
-    long_description: |
-      A React + Flask analytics dashboard visualizing quiz performance, engagement metrics, and survey data
-      from the Java Tutor study. Includes per-question difficulty analysis, condition-level comparisons,
-      and cross-session improvement tracking.
-    tags:
-      - "React"
-      - "Flask"
-      - "Data Visualization"
-      - "Python"
-    featured: true
-    screenshot_folder: "java_tutor_analytics"
-    links:
-      github: "https://github.com/anissawilliams/java_tutor_dashboard_v2"
-      live: "https://java-tutor-frontend.onrender.com"
-
   - id: "cfb-nil-pipeline"
     title: "College Football NIL Data Pipeline"
-    short_description: "Automated ETL pipeline aggregating and standardizing college football NIL data."
+    short_description: "Automated ETL pipeline aggregating and standardizing college football NIL data across programs and conferences."
     long_description: |
       A production-style ETL pipeline that collects, cleans, and aggregates NIL deal information for
       college football players. Supports analysis of NIL trends across conferences, positions, and programs,
-      enabling deeper insight into roster economics and player valuation.
+      enabling deeper insight into roster economics and player valuation. Foundational data layer for PortalIQ.
     tags:
       - "Python"
       - "ETL"
       - "SQL"
       - "Data Engineering"
-      - "Data Visualization"
       - "Sports Analytics"
-    featured: true
+    featured: false
     screenshot_folder: "cfb_nil_pipeline"
     links:
       github: "https://github.com/anissawilliams/cfb-nil-pipeline"
-
-  - id: "regulations-pipeline"
-    title: "Regulations Pipeline"
-    short_description: "Automated pipeline for ingesting, structuring and monitoring regulatory documents at scale."
-    long_description: |
-      A document-processing pipeline that ingests regulatory text, extracts key entities and relationships,
-      and structures the data for downstream compliance analysis. Built with reproducibility, monitoring,
-      and large-scale ingestion in mind.
-    tags:
-      - "Python"
-      - "NLP"
-      - "ETL"
-      - "Data Engineering"
-    featured: false
-    screenshot_folder: "regulations_pipeline"
-    links:
-      github: "https://github.com/anissawilliams/regulations-pipeline"
-
-  - id: "ordinance-parser"
-    title: "Ordinance Parser"
-    short_description: "NLP system for extracting structured insights from municipal ordinances."
-    long_description: |
-      An NLP-powered parser that processes municipal ordinances and extracts structured information
-      related to zoning, permits, and local regulations. Designed to support civic data analysis and
-      automated compliance workflows.
-    tags:
-      - "Python"
-      - "NLP"
-      - "LLM"
-      - "Text Processing"
-    featured: false
-    screenshot_folder: "ordinance_parser"
-    links:
-      github: "https://github.com/anissawilliams/ordinance-parser"
-      live: "https://ordinance-parser.onrender.com/"
 
 theme:
   primary: "#782F40"
