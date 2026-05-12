@@ -51,14 +51,12 @@ projects:
 
   - id: "cofc-soccer"
     title: "CofC Soccer Analytics Pipeline"
-    short_description: "Automated player evaluation system for College of Charleston Men's Soccer — COUG Table scoring, match prediction, and Monte Carlo simulation built on Wyscout data."
+    short_description: "Automated player evaluation and match intelligence platform for College of Charleston Men's Soccer — built on Wyscout data with the COUGS Table proprietary framework."
     long_description: |
       A production analytics pipeline built for the College of Charleston Men's Soccer program.
-      Ingests Wyscout match data to automatically compute the COUG Table — a proprietary player
+      Ingests Wyscout match data to automatically compute the COUGS Table — a proprietary player
       evaluation framework covering defensive (ASET), offensive (PEAK), and set piece contributions.
-      Includes a logistic regression match prediction model with 62.5% LOO accuracy, Monte Carlo
-      win probability simulation, and an automated pre-match scouting report generator.
-      Built to be maintained by undergraduate research assistants season over season.
+      Built for reproducibility and automation to allow insights at your fingertips.
     tags:
       - "Python"
       - "Sports Analytics"
