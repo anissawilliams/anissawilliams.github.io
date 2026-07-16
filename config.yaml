@@ -30,6 +30,30 @@ skills:
   - "Sports Analytics"
 
 projects:
+  - id: "cofc-soccer"
+    title: "CofC Soccer Analytics Pipeline"
+    short_description: "Live player evaluation and match intelligence platform for College of Charleston Men's Soccer — the proprietary COUGS Table dashboard, XGBoost match prediction, and Monte Carlo simulation across Wyscout, Spiideo, and Catapult GPS data."
+    long_description: |
+      A production analytics pipeline built for the College of Charleston Men's Soccer program.
+      Ingests Wyscout XML match data to automatically compute the COUGS Table — a proprietary player
+      evaluation framework covering defensive (ASET), offensive (PEAK), and set piece contributions.
+      Includes a match outcome prediction model (XGBoost, 62.5% LOO accuracy vs 33% baseline),
+      Monte Carlo simulation engine (10,000 iterations, Poisson goal modeling), and automated
+      scouting reports. Multi-source data integration: Wyscout XML, Spiideo video, and Catapult GPS.
+      Built for reproducibility and automation to allow insights at your fingertips.
+    tags:
+      - "Python"
+      - "XGBoost"
+      - "Monte Carlo"
+      - "Wyscout"
+      - "Data Pipeline"
+      - "Scouting"
+    featured: true
+    screenshot_folder: "cofc_soccer"
+    links:
+      github: "https://github.com/anissawilliams/cofc_soccer_analytics_2026"
+      live: "https://cofc-soccer-analytics.vercel.app"
+
   - id: "portaliq"
     title: "RosterSignal / PortalIQ"
     short_description: "Full-stack CFB roster intelligence platform — NIL valuation model (Random Forest, R²=0.39), transfer portal tracking, moneyball scoring, and retention risk served via a live REST API for front office decision-making."
@@ -54,30 +78,7 @@ projects:
     featured: true
     screenshot_folder: "portaliq"
     links:
-      live: "https://portaliq-production.up.railway.app/docs"
-
-  - id: "cofc-soccer"
-    title: "CofC Soccer Analytics Pipeline"
-    short_description: "Automated player evaluation and match intelligence platform for College of Charleston Men's Soccer — predictive modeling, Monte Carlo simulation, and the proprietary COUGS Table performance framework."
-    long_description: |
-      A production analytics pipeline built for the College of Charleston Men's Soccer program.
-      Ingests Wyscout XML match data to automatically compute the COUGS Table — a proprietary player
-      evaluation framework covering defensive (ASET), offensive (PEAK), and set piece contributions.
-      Includes a match outcome prediction model (XGBoost, 62.5% LOO accuracy vs 33% baseline),
-      Monte Carlo simulation engine (10,000 iterations, Poisson goal modeling), and automated
-      scouting reports. Multi-source data integration: Wyscout XML, Spiideo video, and Catapult GPS.
-      Built for reproducibility and automation to allow insights at your fingertips.
-    tags:
-      - "Python"
-      - "XGBoost"
-      - "Monte Carlo"
-      - "Wyscout"
-      - "Data Pipeline"
-      - "Scouting"
-    featured: true
-    screenshot_folder: "cofc_soccer"
-    links:
-      github: "https://github.com/anissawilliams/cofc_soccer_analytics_2026"
+      github: "https://github.com/anissawilliams/rostersignal"
 
   - id: "cfb-chaos"
     title: "CFB Chaos Factor"
