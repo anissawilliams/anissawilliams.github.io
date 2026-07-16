@@ -1,4 +1,14 @@
 {
+  "java_tutor_analytics": [
+    "01_session_comparisons.png",
+    "02_overview_both.png",
+    "03_quiz_performance.png",
+    "04_question_analysis.png",
+    "05_efficiency.png",
+    "06_survey.png",
+    "07_efficiency_recursion.png",
+    "08_efficiency_arraylist.png"
+  ],
   "cfb_nil_pipeline": [
     "01_talent_vs_wins.png",
     "02_conference_sp_ratings.png",
@@ -27,6 +37,7 @@
     "16_ChaosScoresByTeam.png"
   ],
   "cofc_soccer": [
+    "coug_table_match_viz.png",
     "match_breakdown.png",
     "player_trend_jordheim.png",
     "player_trend_white.png",
@@ -54,15 +65,5 @@
     "03_logging.png",
     "04_add_new_bill.png",
     "05_updated_bills.png"
-  ],
-  "java_tutor_analytics": [
-    "01_session_comparisons.png",
-    "02_overview_both.png",
-    "03_quiz_performance.png",
-    "04_question_analysis.png",
-    "05_efficiency.png",
-    "06_survey.png",
-    "07_efficiency_recursion.png",
-    "08_efficiency_arraylist.png"
   ]
 }
